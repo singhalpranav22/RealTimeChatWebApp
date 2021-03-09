@@ -19,6 +19,7 @@ body{
     height: 80vh;
     margin: auto;
     max-width: 68vw;
+    margin-bottom: 10px;
 }
 .message{
     background-color: rgb(236, 231, 231);
