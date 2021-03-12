@@ -1,13 +1,13 @@
 const cors = require('cors');
-const httpServer =require('http');
-http.createServer(function (req, res) {
-}).listen(80, '192.168.0.1');
-const io = require("socket.io")(httpServer.listen(8000,"192.168.0.138"), {
-    cors: {
-      origin: "http://127.0.0.1:5500",
-      methods: ["GET", "POST"]
-    }
-  });
+const httpServer = require("http").createServer();
+// http.createServer(function (req, res) {
+// }).listen(80, '192.168.0.1');
+const io = require("socket.io")(httpServer.listen(8000), {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
+});
 
 const users = {};
 
@@ -22,5 +22,9 @@ socket.on('new-user-joined',nameP => {
 });
 socket.on("send" , message =>{
  socket.broadcast.emit('receive',{message : message , name: users[socket.id]});
+});
+socket.on("disconnect", message => {
+ socket.broadcast.emit('left',users[socket.id]);
+ delete users[socket.id];
 });
 });

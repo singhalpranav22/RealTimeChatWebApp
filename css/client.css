@@ -6,6 +6,13 @@ body{
     height: 100vh;
    background-image: linear-gradient(rgb(255,255,255),rgb(3, 252, 177));
 }
+h1{
+    margin-top: 8px;
+    margin-bottom: 10px;
+    font-size: 18;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
 .image{
     display: block;
     margin: auto;
@@ -16,10 +23,11 @@ body{
     background-image: linear-gradient(rgb(255,255,255),rgb(3, 248,252));
     border: 2px solid blue;
     overflow-y: auto;
-    height: 80vh;
+    height: 70vh;
     margin: auto;
     max-width: 68vw;
     margin-bottom: 10px;
+    border-radius: 15px;
 }
 .message{
     background-color: rgb(236, 231, 231);
@@ -52,14 +60,15 @@ body{
     width: 100%;
 }
 #messageInput{
-    width: 92%;
+    width: 80%;
     border: 2px solid black;
     border-radius: 8px;
     height: 33px;
     padding: 2px;
+    font-size: 22px;
 }
 .btn{
-    width: 6%;
+    width: 9%;
     border: 2px solid black;
     border-radius: 4px;
     height: 38px;
